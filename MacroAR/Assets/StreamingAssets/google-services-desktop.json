@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "735859400005",
+    "firebase_url": "https://macroapp-6af98.firebaseio.com",
+    "project_id": "macroapp-6af98",
+    "storage_bucket": "macroapp-6af98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735859400005:android:dd7af855db532c00",
+        "android_client_info": {
+          "package_name": "com.linipoin.ionic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735859400005-4gntfbgl7jcmaqcg7i5khnh9f4dudh2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk1VvpAlfiPzVFpJ1TNm-s0dSsLqpuU9k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
