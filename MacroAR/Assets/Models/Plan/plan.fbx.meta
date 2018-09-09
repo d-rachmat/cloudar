@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 234d9b925db5c4a77a9ba12da9ecfe79
-timeCreated: 1535439776
-licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -8545,6 +8543,7 @@ ModelImporter:
     4303372: instance_0.002
     4303374: instance_0.001
     4303376: instance_0
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -8564,6 +8563,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

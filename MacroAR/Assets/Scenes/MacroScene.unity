@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43700677, g: 0.48469126, b: 0.5649461, a: 1}
+  m_IndirectSpecularColor: {r: 0.43699348, g: 0.48467934, b: 0.56494147, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -380,7 +380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.23503, y: 9.381836}
+  m_AnchoredPosition: {x: -0.23501587, y: 9.381836}
   m_SizeDelta: {x: -18.46, y: 185.36}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &42765434
@@ -472,7 +472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0064849854, y: 0}
+  m_AnchoredPosition: {x: -0.006500244, y: 0}
   m_SizeDelta: {x: 0.012939, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49102188
@@ -1605,6 +1605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554633049}
   - component: {fileID: 554633048}
+  - component: {fileID: 554633050}
   m_Layer: 0
   m_Name: CloudRecognition
   m_TagString: Untagged
@@ -1638,6 +1639,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554633050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554633047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1861d8d548cefbc46afe8fc43caa221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &581241048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,7 +1878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.108, y: 0.23}
   m_AnchorMax: {x: 0.39458764, y: 0.75000006}
-  m_AnchoredPosition: {x: 0.5, y: 1.0000267}
+  m_AnchoredPosition: {x: 0.5, y: 1.0000305}
   m_SizeDelta: {x: 0.40000153, y: 0.2480011}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &652042521
@@ -2430,6 +2442,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: de1593a16346ab045974f1cd34fd831f, type: 2}
   m_StaticBatchInfo:
@@ -2597,7 +2610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1046367671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,7 +3121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.26196575}
+  m_AnchoredPosition: {x: 0, y: 0.2619667}
   m_SizeDelta: {x: 555.15, y: 167.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319284424
@@ -3252,7 +3265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000005356502, y: 100}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1342688007
@@ -3685,7 +3698,7 @@ Mesh:
   m_IndexBuffer: 000001000200020001000300
   m_Skin: []
   m_VertexData:
-    m_CurrentChannels: 11
+    serializedVersion: 2
     m_VertexCount: 4
     m_Channels:
     - stream: 0
@@ -3701,9 +3714,25 @@ Mesh:
       format: 0
       dimension: 0
     - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 24
       format: 0
       dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     - stream: 0
       offset: 0
       format: 0
