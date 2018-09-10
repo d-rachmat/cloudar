@@ -6,10 +6,12 @@ using System.Linq;
 
 public class SimpleHandler : MonoBehaviour, ICloudRecoEventHandler {
 	private CloudRecoBehaviour mCloudRecoBehaviour;
-	
 	private bool mIsScanning = false;
 	private string mTargetMetadata = "";
 	ObjectTracker m_ObjectTracker;
+
+    public Loader loader;
+
 	// Use this for initialization
 	void Start () {
 		// register this event handler at the cloud reco behaviour
@@ -48,25 +50,26 @@ public class SimpleHandler : MonoBehaviour, ICloudRecoEventHandler {
 	public void OnNewSearchResult(TargetFinder.TargetSearchResult targetSearchResult) {
 		// do something with the target metadata
 		mTargetMetadata = targetSearchResult.MetaData;
-		
+
+        loader.assetBundleName = "bundle_" + targetSearchResult.TargetName;
 		// stop the target finder (i.e. stop scanning the cloud)
 		mCloudRecoBehaviour.CloudRecoEnabled = false;
 	}
 
-	void OnGUI() {
-		// Display current 'scanning' status
-		GUI.Box (new Rect(100,100,200,50), mIsScanning ? "Scanning" : "Not scanning");  
+	//void OnGUI() {
+	//	// Display current 'scanning' status
+	//	GUI.Box (new Rect(100,100,200,50), mIsScanning ? "Scanning" : "Not scanning");  
 		
-		// Display metadata of latest detected cloud-target
-		GUI.Box (new Rect(100,200,200,50), "Metadata: " + mTargetMetadata); 
+	//	// Display metadata of latest detected cloud-target
+	//	GUI.Box (new Rect(100,200,200,50), "Metadata: " + mTargetMetadata); 
 		
-		// If not scanning, show button 
-		// so that user can restart cloud scanning
-		if (!mIsScanning) {
-			if (GUI.Button(new Rect(100,300,200,50), "Restart Scanning")) {
-				// Restart TargetFinder
-				mCloudRecoBehaviour.CloudRecoEnabled = true;
-			}
-		}
-	}
+	//	// If not scanning, show button 
+	//	// so that user can restart cloud scanning
+	//	if (!mIsScanning) {
+	//		if (GUI.Button(new Rect(100,300,200,50), "Restart Scanning")) {
+	//			// Restart TargetFinder
+	//			mCloudRecoBehaviour.CloudRecoEnabled = true;
+	//		}
+	//	}
+	//}
 }

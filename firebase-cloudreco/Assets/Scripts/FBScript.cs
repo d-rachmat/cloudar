@@ -21,7 +21,7 @@ public class FBScript : MonoBehaviour
     public Text greeting;
     public Text coin;
     public Image pp;
-
+    public GameObject blur;
     public string uid;
     public string ppUrl;
 
@@ -162,6 +162,7 @@ public class FBScript : MonoBehaviour
         greeting.text = "Welcome, " + Nama + " !";
         ppUrl = ProfilePicture;
         coin.text = Coin ;
+        blur.SetActive(false);
         StartCoroutine(profilePicture(ppUrl));
     }
 
