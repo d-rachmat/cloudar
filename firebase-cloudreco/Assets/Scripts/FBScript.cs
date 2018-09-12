@@ -24,7 +24,7 @@ public class FBScript : MonoBehaviour
     public GameObject blur;
     public string uid;
     public string ppUrl;
-
+    public string idu;
     public GameObject loginElement, logOutElement;
 
     void Start()
@@ -148,9 +148,54 @@ public class FBScript : MonoBehaviour
                         profilepicture = child.Child("profilePicture").Value.ToString();
                         coins = child.Child("coin").Value.ToString();
                         LoginCondition(nama, profilepicture, coins);
+                        idu = id;
                         break;
                     }
                 }
+            }
+        });
+    }
+
+    public void AddPointToSpecifiedUser(string PointToAdd)
+    {
+        // First of all get the old poin
+        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild("uid").EqualTo(uid).GetValueAsync().ContinueWith(task => {
+
+            int oldPoin = 0;
+            int newPoin;
+
+            if (task.IsFaulted)
+            {
+                // Handle the error...
+                Debug.Log("Faulted");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                Debug.Log("The snapshot raw json value: " + snapshot.GetRawJsonValue());
+
+                // Do something with snapshot...
+                // Do something with snapshot...
+                var items = snapshot.Value as Dictionary<string, object>;
+
+
+                if (snapshot.HasChildren)
+                {
+                    foreach (DataSnapshot child in snapshot.Children)
+                    {
+                        oldPoin = Convert.ToInt32(child.Child("coin").Value);
+                        string id = child.Child("id").Value.ToString();
+                        Debug.Log(oldPoin);
+                        Debug.Log("data berhasil di simpan");
+                        Debug.Log(id);
+
+                        newPoin = oldPoin + Convert.ToInt32(PointToAdd);
+
+                        FirebaseDatabase.DefaultInstance.GetReference(id).Child("coin").SetValueAsync(newPoin);
+                        Debug.Log("OKOK");
+                    }
+                }
+
             }
         });
     }
@@ -163,6 +208,7 @@ public class FBScript : MonoBehaviour
         ppUrl = ProfilePicture;
         coin.text = Coin ;
         blur.SetActive(false);
+        GameObject.Find("CloudRecognition").GetComponent<SimpleHandler>().enabled = true;
         StartCoroutine(profilePicture(ppUrl));
     }
 
