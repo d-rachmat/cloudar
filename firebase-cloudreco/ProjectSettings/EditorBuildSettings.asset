@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MacroScene.unity
+    guid: f6ba8b8e2875c4625a0d5d568bfa501b
+  - enabled: 0
+    path: Assets/mac.unity
+    guid: d6e194de30fc244b48a6b05da24ab6d2
+  - enabled: 0
+    path: Assets/tes.unity
+    guid: f1269b9a7826649058e6e939d9a2a43a
   m_configObjects: {}
