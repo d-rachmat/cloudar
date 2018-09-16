@@ -17,6 +17,7 @@ public class FBScript : MonoBehaviour
     private string privateUserName;
     private string privatePassword;
 
+    public ARController arcontroller;
     public InputField UserNameInput, PasswordInput;
     public Button LoginButton;
     public Text ErrorText;
@@ -43,6 +44,14 @@ public class FBScript : MonoBehaviour
         StartCoroutine(InitializeLogin());
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     void InitializeDatabase()
     {
         // Set this before calling into the realtime database.
@@ -66,7 +75,7 @@ public class FBScript : MonoBehaviour
 
     public void Logout()
     {
-        logout.SetActive(false);
+        arcontroller.burgerBoel = false;
         StartCoroutine(logOUt());
     }
 

@@ -6,7 +6,8 @@ public class PointController : MonoBehaviour
 {
     public FBScript firebasescript;
     public SimpleHandler simplehandler;
-    public Loader loader;
+    public GameObject coin;
+    public GameObject logout;
 
     private void Update()
     {
@@ -20,5 +21,8 @@ public class PointController : MonoBehaviour
         simplehandler.Lootbox.SetActive(false);
         simplehandler.mCloudRecoBehaviour.CloudRecoEnabled = true;
         firebasescript.loginElement.SetActive(true);
+        coin.GetComponent<Animator>().SetTrigger("coinanim");
+        coin.GetComponent<AudioSource>().Play();
+        logout.SetActive(false);
     }
 }

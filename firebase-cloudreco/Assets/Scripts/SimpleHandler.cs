@@ -107,7 +107,7 @@ public class SimpleHandler : MonoBehaviour, ICloudRecoEventHandler {
     {
         vp = videoContent.GetComponent<VideoPlayer>();
         vp.gameObject.SetActive(false);
-        vp.gameObject.GetComponent<RenderTexture>().Release();
+        vp.targetTexture.Release();
         Lootbox.SetActive(true);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ARController : MonoBehaviour {
 
-    bool burgerBoel = false;
+    public bool burgerBoel = false;
     public GameObject logOUtpanel;
 
     private void Update()
